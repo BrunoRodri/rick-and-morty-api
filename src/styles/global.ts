@@ -14,6 +14,11 @@ export default createGlobalStyle`
 
   a {
     text-decoration: none;
+    color: #0ba0b1;
+  }
+
+  .perso a {
+    width: 15px;
   }
 
   button, a {

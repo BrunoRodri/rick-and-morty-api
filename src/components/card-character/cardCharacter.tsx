@@ -1,12 +1,14 @@
-import { Button, Card, ListGroup, Col } from "react-bootstrap";
+import { Card, ListGroup, Col } from "react-bootstrap";
 import Logo from '../../assets/Rick_and_Morty.svg'
+import { Link } from "react-router-dom";
 import './styles.css'
 
 
 export const CardCharacter = () => {
   return(
   <>
-  <Col md={3} className="mb-3">
+  <Col className="mb-3 perso">
+  <Link className="perso" to='/personagens'>
     <Card style={{ width: '18rem' }}>
         <Card.Img variant="top" src={Logo} />
         <Card.Body>
@@ -16,9 +18,9 @@ export const CardCharacter = () => {
           <ListGroup className="mb-3"> 
               <ListGroup.Item>Ultima Localização: unknown</ListGroup.Item>
             </ListGroup>
-          <Button variant="primary">Detalhes</Button>
         </Card.Body>
       </Card>
+      </Link>
   </Col>
   </>
   )

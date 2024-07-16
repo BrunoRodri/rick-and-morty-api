@@ -1,10 +1,8 @@
-img {
-  
+img { 
   width: 150px;
 }
 
-.container{
-  display: flex;
+.navbar{
+  flex-direction: column;
   align-items: center;
-  justify-content: space-between;
 }

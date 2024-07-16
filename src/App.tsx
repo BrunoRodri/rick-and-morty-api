@@ -5,7 +5,7 @@ import { Wrapper } from './shared/wrapper';
 function App() {
   return (
     <>
-      <Wrapper />
+      
     </>
   )
 }

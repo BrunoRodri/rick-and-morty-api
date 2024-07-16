@@ -1,4 +1,4 @@
-import { Navbar,Container, Nav } from "react-bootstrap";
+import { Navbar, Nav } from "react-bootstrap";
 import Logo from '../../assets/Rick_and_Morty.svg'
 import { Link } from "react-router-dom";
 import './styles.css'
@@ -6,8 +6,7 @@ import './styles.css'
 
 export const Header = () => {
   return (
-    <Navbar expand="lg" className="bg-body-tertiary">
-      <Container>
+    <Navbar className="bg-body-tertiary">
         <Navbar.Brand><Link to='/'><img src={Logo} alt="" /></Link></Navbar.Brand>
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
@@ -15,8 +14,7 @@ export const Header = () => {
               <Nav.Link><Link to='/episodios'>Episódios</Link></Nav.Link>
               <Nav.Link><Link to='/localizacoes'>Localizações</Link></Nav.Link>
           </Nav>
-        </Navbar.Collapse>
-      </Container>
+        </Navbar.Collapse>   
     </Navbar>
 
   )

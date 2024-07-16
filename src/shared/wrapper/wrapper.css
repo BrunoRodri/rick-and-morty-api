@@ -9,8 +9,7 @@ nav .container {
   height: 100%;
   margin-top: 20px;
   display: flex;
-  justify-content: center;
-  align-items: center; 
+  flex-direction: column;
 }
 
 .navbar-nav {

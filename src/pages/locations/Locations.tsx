@@ -22,6 +22,10 @@ export const Locations = () => {
         <CardLocation />
         <CardLocation />
         <CardLocation />
+        <CardLocation />
+        <CardLocation />
+        <CardLocation />
+        <CardLocation />
       </Row>
     </Container>
 

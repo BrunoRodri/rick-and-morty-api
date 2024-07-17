@@ -6,7 +6,7 @@ export const CardEpisode = () => {
   return (
     <>
     <Col className="mb-5">
-      <a><Link to='/episodios'>
+      <Link to='/episodios'>
       <Card style={{ width: '18rem' }}>
         <Card.Body>
           <Card.Title>The Wedding Squanchers</Card.Title>
@@ -16,7 +16,7 @@ export const CardEpisode = () => {
           </ListGroup>
         </Card.Body>
       </Card>
-      </Link></a>
+      </Link>
     </Col>
     </>
   )

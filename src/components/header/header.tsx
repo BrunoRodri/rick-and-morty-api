@@ -10,9 +10,9 @@ export const Header = () => {
         <Navbar.Brand><Link to='/'><img src={Logo} alt="" /></Link></Navbar.Brand>
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
-              <Nav.Link><Link to='/personagens'>Personagens</Link></Nav.Link>
-              <Nav.Link><Link to='/episodios'>Episódios</Link></Nav.Link>
-              <Nav.Link><Link to='/localizacoes'>Localizações</Link></Nav.Link>
+              <Nav><Link to='/personagens'>Personagens</Link></Nav>
+              <Nav><Link to='/episodios'>Episódios</Link></Nav>
+              <Nav><Link to='/localizacoes'>Localizações</Link></Nav>
           </Nav>
         </Navbar.Collapse>   
     </Navbar>

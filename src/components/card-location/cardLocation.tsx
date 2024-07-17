@@ -6,7 +6,7 @@ export const CardLocation = () => {
   return (
     <>
     <Col className="mb-5">
-      <a><Link to='/localizacoes'>
+      <Link to='/localizacoes'>
       <Card style={{ width: '15rem' }}>
         <Card.Body className="localizacao">
           <Card.Title>The Menagerie</Card.Title>
@@ -16,7 +16,7 @@ export const CardLocation = () => {
           </ListGroup>
         </Card.Body>
       </Card>
-      </Link></a>
+      </Link>
     </Col>
     </>
   )

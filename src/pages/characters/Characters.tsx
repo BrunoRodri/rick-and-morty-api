@@ -1,7 +1,7 @@
 import { CardCharacter } from "../../components";
 import { Container } from "react-bootstrap";
 import { Row } from "react-bootstrap";
-import { getCharacters, CharacterResponse } from "../../services/character";
+import { getCharacters, CharacterResponse } from "../../services/characters";
 import { useEffect, useState } from "react";
 import './styles.css'
 
@@ -17,7 +17,7 @@ export const Characters = () => {
 
         setCharacter(characterData.results)
       } catch (error) {
-        console.log('erro')
+        console.log('erro', error)
       } finally {
         console.log('Finalizou')
         

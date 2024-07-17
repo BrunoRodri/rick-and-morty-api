@@ -9,7 +9,8 @@ export interface CharacterResponse {
   location:{
     name: string;
     url: string;
-  }
+  };
+  results:[];
 }
 
 export const getCharacters = async (): Promise<CharacterResponse> => {

@@ -1,9 +1,11 @@
 import { Card, ListGroup, Col } from "react-bootstrap";
 
+
 import { Link } from "react-router-dom";
 import './styles.css'
 
 interface CardCharacterProps {
+  id: number;
   image: string;
   name: string;
   species: string;
@@ -15,11 +17,11 @@ interface CardCharacterProps {
 }
 
 
-export const CardCharacter = ({ image, name, species, status, location}: CardCharacterProps) => {
+export const CardCharacter = ({ id,image, name, species, status, location}: CardCharacterProps) => {
   return(
   <>
   <Col className="mb-3 perso">
-  <Link className="perso" to='/personagens'>
+  <Link className="perso" to={`/personagens/${id}`}>
     <Card style={{ width: '18rem' }}>
         <Card.Img variant="top" src={image} />
         <Card.Body>

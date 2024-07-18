@@ -1,6 +1,6 @@
 import { Container, Row } from "react-bootstrap"
 import { CardLocation } from "../../components"
-import { getLocation, LocationResponse } from "../../services/locations";
+import { getAllLocation, LocationResponse } from "../../services/locations";
 import { useEffect, useState } from "react";
 
 export const Locations = () => {
@@ -11,7 +11,7 @@ export const Locations = () => {
     const getData = async () => {
       try {
         console.log('Iniciou')
-        const [locationData] = await Promise.all([getLocation()])
+        const [locationData] = await Promise.all([getAllLocation()])
 
         setLocation(locationData.results)
       } catch (error) {
@@ -30,8 +30,9 @@ export const Locations = () => {
       <Row className="mt-5">
         <h1>Localizações</h1>
         {location.map((loc)=> (
-          <CardLocation 
+          <CardLocation
           key={loc.id}
+          id={loc.id} 
           name={loc.name}
           type={loc.type}
           dimension={loc.dimension}

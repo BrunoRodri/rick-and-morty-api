@@ -1,6 +1,6 @@
 import { Container, Row } from 'react-bootstrap';
 import { CardEpisode } from '../../components'
-import { getEpisodes, EpisodeResponse } from '../../services/episodes';
+import { getAllEpisodes, EpisodeResponse } from '../../services/episodes';
 import { useEffect, useState } from 'react';
 
 export const Episodes = () => {
@@ -11,7 +11,7 @@ export const Episodes = () => {
   useEffect(() => {
     const getData = async () => {
       try {
-        const [episodeData] = await Promise.all([getEpisodes()])
+        const [episodeData] = await Promise.all([getAllEpisodes()])
 
        setEpisodes(episodeData.results)
       } catch (error) {
@@ -22,7 +22,7 @@ export const Episodes = () => {
       };
     }
     getData();
-  },[]);
+  },[])
 
   return(
     <>
@@ -32,6 +32,7 @@ export const Episodes = () => {
         {episodes.map((epi)=> (
           <CardEpisode
           key={epi.id}
+          id={epi.id}
           name={epi.name}
           air_date={epi.air_date}
           episode={epi.episode}

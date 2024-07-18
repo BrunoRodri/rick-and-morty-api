@@ -1,7 +1,7 @@
 import { CardCharacter } from "../../components";
 import { Container } from "react-bootstrap";
 import { Row } from "react-bootstrap";
-import { getCharacters, CharacterResponse } from "../../services/characters";
+import { getAllCharacters, CharacterResponse } from "../../services/characters";
 import { useEffect, useState } from "react";
 import './styles.css'
 
@@ -12,9 +12,7 @@ export const Characters = () => {
   useEffect(() => {
     const getData = async () => {
       try{
-      
-        const [characterData] = await Promise.all([getCharacters()])
-
+        const [characterData] = await Promise.all([getAllCharacters()])
         setCharacter(characterData.results)
       } catch (error) {
         console.log('erro', error)
@@ -35,6 +33,7 @@ export const Characters = () => {
           
           <CardCharacter 
           key={char.id}
+          id={char.id}
           name={char.name}
           image={char.image}
           species={char.species}

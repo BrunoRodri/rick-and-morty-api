@@ -8,8 +8,13 @@ export interface LocationResponse {
   results: [];
 }
 
-export const getLocation = async (): Promise<LocationResponse> => {
+export const getAllLocation = async (): Promise<LocationResponse> => {
   const response = await instance.get(`/location`);
+  return response.data;
+}
+
+export const getLocation = async (id: string): Promise<LocationResponse> => {
+  const response = await instance.get(`/location/${id}`);
   return response.data;
 }
 

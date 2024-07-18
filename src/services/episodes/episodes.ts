@@ -9,7 +9,12 @@ export interface EpisodeResponse {
 }
 
 
-export const getEpisodes = async (): Promise<EpisodeResponse> => {
+export const getAllEpisodes = async (): Promise<EpisodeResponse> => {
   const response = await instance.get(`/episode`);
+  return response.data;
+}
+
+export const getEpisode = async (id: string): Promise<EpisodeResponse> => {
+  const response = await instance.get(`/episode/${id}`);
   return response.data;
 }

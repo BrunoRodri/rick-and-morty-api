@@ -10,10 +10,20 @@ export interface CharacterResponse {
     name: string;
     url: string;
   };
+  origin:{
+    name: string;
+    url: string;
+  }
   results:[];
 }
 
-export const getCharacters = async (): Promise<CharacterResponse> => {
+export const getAllCharacters = async (): Promise<CharacterResponse> => {
   const response = await instance.get(`/character`);
   return response.data;
+}
+
+export const getCharacter = async (id: string): Promise<CharacterResponse> => {
+  const response = await instance.get(`/character/${id}`);
+  return response.data;
+
 }

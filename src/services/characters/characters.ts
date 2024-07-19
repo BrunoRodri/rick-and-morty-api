@@ -14,6 +14,7 @@ export interface CharacterResponse {
     name: string;
     url: string;
   }
+  episode:[];
   results:[];
 }
 

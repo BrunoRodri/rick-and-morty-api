@@ -5,6 +5,7 @@ export interface LocationResponse {
   name: string;
   type: string;
   dimension:string;
+  residents:[];
   results: [];
 }
 

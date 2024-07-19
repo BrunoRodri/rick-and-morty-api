@@ -14,6 +14,7 @@ export const Characters = () => {
       try{
         const [characterData] = await Promise.all([getAllCharacters()])
         setCharacter(characterData.results)
+        
       } catch (error) {
         console.log('erro', error)
       } finally {

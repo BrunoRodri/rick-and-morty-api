@@ -1,4 +1,6 @@
 import { getLocation, LocationResponse } from "../../services/locations";
+import { CardCharacter } from "../../components";
+import { CharacterResponse } from "../../services/characters";
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 
@@ -6,12 +8,20 @@ export const LocationDetails = () => {
 
   const { id } = useParams();
   const [location, setLocation] = useState<LocationResponse>()
+  const [results, setResults] = useState<CharacterResponse[]>([])
 
   useEffect(() => {
     const getData = async () => {
       try{
         const data = await getLocation(id as string)
+
+        const characters = await Promise.all(
+          data.residents.map((char) =>(
+          fetch(char).then((res) => res.json())
+        ))
+      )
         setLocation(data)
+        setResults(characters)
         console.log(data)
       } catch (error) {
         console.log('erro', error)
@@ -36,6 +46,19 @@ export const LocationDetails = () => {
     <div className='section character'>
       <div className='episodes'>
         <h4>Residentes</h4>
+      </div>
+      <div className="residents-card">
+      {results.map((char) => (
+          <CardCharacter 
+          key={char.id}
+          id={char.id}
+          image={char.image}
+          name={char.name}
+          status={char.status}
+          species={char.species}
+          location={char.location}
+           />
+        ))}
       </div>
     </div>
     </>

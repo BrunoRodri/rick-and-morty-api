@@ -6,6 +6,7 @@ interface CardEpisodeProps {
   name: string;
   air_date: string;
   episode: string;
+  url: string;
 }
 
 

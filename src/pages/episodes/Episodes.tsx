@@ -14,6 +14,7 @@ export const Episodes = () => {
         const [episodeData] = await Promise.all([getAllEpisodes()])
 
        setEpisodes(episodeData.results)
+       console.log(episodeData)
       } catch (error) {
         console.log('Erro', error)
       } finally {
@@ -36,6 +37,7 @@ export const Episodes = () => {
           name={epi.name}
           air_date={epi.air_date}
           episode={epi.episode}
+          url={epi.url}
           />
         ))}
       </Row>

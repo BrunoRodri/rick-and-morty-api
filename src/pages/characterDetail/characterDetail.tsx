@@ -1,5 +1,7 @@
 import './styles.css'
 import { getCharacter, CharacterResponse } from '../../services/characters'
+import { CardEpisode } from '../../components'
+import { EpisodeResponse } from '../../services/episodes'
 import { useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
 
@@ -7,14 +9,26 @@ export const CharacterDetail = () => {
 
   const { id } = useParams();
   const [character, setCharacter] = useState<CharacterResponse>()
+  const [results, setResults] = useState<EpisodeResponse[]>([])
 
 
   useEffect(() => {
     const getData = async () => {
       try{
         const data = await getCharacter(id as string)
+
+
+        const episode = await Promise.all(
+          data.episode.map((epi)=>(
+             fetch(epi).then((res) => res.json())
+          
+        ))
+      )
+        setResults(episode)
         setCharacter(data)
+        console.log(episode)
         console.log(data)
+        
       } catch (error) {
         console.log('erro', error)
       } finally {
@@ -45,6 +59,19 @@ export const CharacterDetail = () => {
       <div className='episodes'>
         <h4>{character?.name} aparece nos seguintes episódios:</h4>
       </div>
+
+      <div className="episode-card">
+        {results?.map((epi)=>(
+          <CardEpisode
+            key={epi.id}
+            id={epi.id}
+            name={epi.name}
+            air_date={epi.air_date}
+            episode={epi.episode}
+            url={epi.url}
+            />
+        ))}
+      </div>  
     </div>
     
   

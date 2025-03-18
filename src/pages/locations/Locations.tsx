@@ -2,6 +2,7 @@ import { Container, Row } from "react-bootstrap"
 import { CardLocation } from "../../components"
 import { getAllLocation, LocationResponse } from "../../services/locations";
 import { useEffect, useState } from "react";
+import './style.css'
 
 export const Locations = () => {
 

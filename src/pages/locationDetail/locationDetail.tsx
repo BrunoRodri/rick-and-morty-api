@@ -4,6 +4,7 @@ import { CharacterResponse } from "../../services/characters";
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { Row, Container } from "react-bootstrap";
+import './style.css'
 
 export const LocationDetails = () => {
 

@@ -1,6 +1,7 @@
 import { instance } from "../instance/instance";
 
 export interface CharacterResponse {
+  info: any;
   id: number;
   name: string;
   image: string;
@@ -18,8 +19,8 @@ export interface CharacterResponse {
   results:[];
 }
 
-export const getAllCharacters = async (): Promise<CharacterResponse> => {
-  const response = await instance.get(`/character`);
+export const getAllCharacters = async (page: number =1): Promise<CharacterResponse> => {
+  const response = await instance.get(`/character?page=${page}`);
   return response.data;
 }
 

@@ -1,6 +1,7 @@
 import { instance } from "../instance/instance";
 
 export interface EpisodeResponse {
+  info: any;
   id: number;
   name: string;
   air_date: string;
@@ -11,8 +12,8 @@ export interface EpisodeResponse {
 }
 
 
-export const getAllEpisodes = async (): Promise<EpisodeResponse> => {
-  const response = await instance.get(`/episode`);
+export const getAllEpisodes = async (page: number =1): Promise<EpisodeResponse> => {
+  const response = await instance.get(`/episode?page=${page}`);
   return response.data;
 }
 

@@ -1,6 +1,7 @@
 import { instance } from "../instance/instance";
 
 export interface LocationResponse {
+  info: any;
   id: number;
   name: string;
   type: string;
@@ -9,8 +10,8 @@ export interface LocationResponse {
   results: [];
 }
 
-export const getAllLocation = async (): Promise<LocationResponse> => {
-  const response = await instance.get(`/location`);
+export const getAllLocation = async (page: number =1): Promise<LocationResponse> => {
+  const response = await instance.get(`/location?page=${page}`);
   return response.data;
 }
 

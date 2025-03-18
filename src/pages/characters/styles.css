@@ -3,6 +3,10 @@
   margin-bottom: 50px;
 }
 
+.card-title {
+  margin-top: 20px !important;
+}
+
 .perso a {
   display: flex;
   justify-content: center;
@@ -10,3 +14,12 @@
   width: 100% !important;
 }
 
+.page-link {
+  color: #2DA0AC !important;
+  border-color: #248086 !important;
+}
+
+.active> .page-link {
+  background-color: #2DA0AC!important;
+  color: white !important;
+}

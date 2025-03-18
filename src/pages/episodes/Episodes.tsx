@@ -29,7 +29,7 @@ export const Episodes = () => {
     <>
     <Container className="body">
       <Row className="mt-5">
-        <h1>Episódios</h1>
+        <h1 className='titulo'>Episódios</h1>
         {episodes.map((epi)=> (
           <CardEpisode
           key={epi.id}

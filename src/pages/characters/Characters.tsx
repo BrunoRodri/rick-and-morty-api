@@ -18,7 +18,7 @@ export const Characters = () => {
       } catch (error) {
         console.log('erro', error)
       } finally {
-        console.log('Finalizou')
+        // console.log('Finalizou')
         
       }
     }
@@ -29,7 +29,7 @@ export const Characters = () => {
 
     <Container className="body">
       <Row className="mt-5">
-        <h1>Personagens</h1>
+        <h1 className="titulo">Personagens</h1>
         {character.map((char)=> (
           
           <CardCharacter 

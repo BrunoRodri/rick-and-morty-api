@@ -14,7 +14,7 @@ export const CardEpisode = ({ id,name, air_date, episode}: CardEpisodeProps) => 
   return (
     <>
     <Col className="mb-5">
-      <Link to={`/episodios/${id}`}>
+      <Link className="epi" to={`/episodios/${id}`}>
       <Card style={{ width: '18rem' }}>
         <Card.Body>
           <Card.Title>{name}</Card.Title>

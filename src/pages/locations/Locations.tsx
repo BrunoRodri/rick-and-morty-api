@@ -28,7 +28,7 @@ export const Locations = () => {
     <>
     <Container className="body">
       <Row className="mt-5">
-        <h1>Localizações</h1>
+        <h1 className="titulo">Localizações</h1>
         {location.map((loc)=> (
           <CardLocation
           key={loc.id}

@@ -4,6 +4,7 @@ import { CardEpisode } from '../../components'
 import { EpisodeResponse } from '../../services/episodes'
 import { useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
+import { Row, Container } from "react-bootstrap";
 
 export const CharacterDetail = () => {
 
@@ -16,24 +17,18 @@ export const CharacterDetail = () => {
     const getData = async () => {
       try{
         const data = await getCharacter(id as string)
-
-
         const episode = await Promise.all(
           data.episode.map((epi)=>(
              fetch(epi).then((res) => res.json())
-          
         ))
       )
         setResults(episode)
         setCharacter(data)
-        console.log(episode)
-        console.log(data)
         
       } catch (error) {
         console.log('erro', error)
       } finally {
-        console.log('Finalizou')
-        
+        // console.log('Finalizou')
       }
     }
     getData()
@@ -61,20 +56,23 @@ export const CharacterDetail = () => {
       </div>
 
       <div className="episode-card">
-        {results?.map((epi)=>(
-          <CardEpisode
-            key={epi.id}
-            id={epi.id}
-            name={epi.name}
-            air_date={epi.air_date}
-            episode={epi.episode}
-            url={epi.url}
-            />
-        ))}
+        <Container className="body">
+          <Row className="mt-5">
+            {results?.map((epi)=>(
+              <CardEpisode
+                key={epi.id}
+                id={epi.id}
+                name={epi.name}
+                air_date={epi.air_date}
+                episode={epi.episode}
+                url={epi.url}
+                />
+            ))}
+          </Row>
+        </Container>
       </div>  
     </div>
     
-  
   </>
   )
 }

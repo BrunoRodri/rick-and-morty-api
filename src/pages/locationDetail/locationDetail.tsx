@@ -3,6 +3,7 @@ import { CardCharacter } from "../../components";
 import { CharacterResponse } from "../../services/characters";
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
+import { Row, Container } from "react-bootstrap";
 
 export const LocationDetails = () => {
 
@@ -48,17 +49,21 @@ export const LocationDetails = () => {
         <h4>Residentes</h4>
       </div>
       <div className="residents-card">
-      {results.map((char) => (
-          <CardCharacter 
-          key={char.id}
-          id={char.id}
-          image={char.image}
-          name={char.name}
-          status={char.status}
-          species={char.species}
-          location={char.location}
-           />
-        ))}
+        <Container className="body">
+          <Row className="mt-5">
+            {results.map((char) => (
+              <CardCharacter 
+              key={char.id}
+              id={char.id}
+              image={char.image}
+              name={char.name}
+              status={char.status}
+              species={char.species}
+              location={char.location}
+              />
+            ))}
+          </Row>
+        </Container>
       </div>
     </div>
     </>

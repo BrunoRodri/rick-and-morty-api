@@ -21,3 +21,10 @@
   color: #ffa500;
 }
 
+
+@media (max-width: 936px) {
+  .epi-wrapper {
+    width: 90% !important;
+  }
+}
+

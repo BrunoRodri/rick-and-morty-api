@@ -1,0 +1,7 @@
+.epi .card-body {
+  height: 200px;
+}
+
+.epi .card-body .card-title {
+  text-align: center;
+}

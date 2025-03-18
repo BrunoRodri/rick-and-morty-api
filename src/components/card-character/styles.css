@@ -12,10 +12,8 @@
   flex-wrap: wrap-reverse;
 }
 
-.card-title{
-  /* margin-top: 20px !important; */
-}
 
-.card-body {
+
+.perso .card-body {
   padding: 0 !important;
 }

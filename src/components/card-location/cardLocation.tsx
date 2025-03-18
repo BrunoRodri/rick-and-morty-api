@@ -13,7 +13,7 @@ export const CardLocation = ({ id, name, type, dimension }: CardLocationProps) =
   return (
     <>
     <Col className="mb-5">
-      <Link to={`/localizacoes/${id}`}>
+      <Link className="loc" to={`/localizacoes/${id}`}>
       <Card style={{ width: '15rem' }}>
         <Card.Body className="localizacao">
           <Card.Title>{name}</Card.Title>

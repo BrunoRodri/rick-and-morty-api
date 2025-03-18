@@ -1,0 +1,7 @@
+.loc .card-body {
+  height: 200px;
+}
+
+.loc .card-body .card-title {
+  text-align: center;
+}
